@@ -36,6 +36,11 @@ jobs:
           export TMPDIR=~/tmp && \
           chmod +x configure && \
           chmod +x cleanup 
+      - name: Install dependencies
+        run: |
+          install.packages(c("remotes", "rcmdcheck","tidyr"))
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
 
       - name: Bootstrap
         run: |

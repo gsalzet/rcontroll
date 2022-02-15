@@ -1,4 +1,7 @@
 
+# rcontroll 0.1.0.9045
+*  Update GH Actions
+
 # rcontroll 0.1.0.9044
 *  Final Configure file
 
@@ -27,7 +30,7 @@
 * `autoplot` v2
 
 # rcontroll 0.1.0.9035
-* Fabain's cleaned CPP
+* Fabian's cleaned CPP
 
 # rcontroll 0.1.0.9034
 * using TROLL child for fake parralelisation
