@@ -35,13 +35,7 @@ jobs:
         run: |
           export TMPDIR=~/tmp && \
           chmod +x configure && \
-          chmod +x cleanup 
-      - name: Install dependencies
-        run: |
-          install.packages(c("remotes", "rcmdcheck","tidyr"))
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
-
+          chmod +x cleanup
       - name: Bootstrap
         run: |
           curl -OLs https://eddelbuettel.github.io/r-ci/run.sh
@@ -50,6 +44,12 @@ jobs:
       - name: Dependencies
         run: ./run.sh install_deps
 
+      - name: Install dependencies
+        run: |
+          install.packages(c("remotes", "rcmdcheck","tidyr"))
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
+        
       - name: Test
         run: ./run.sh run_tests
 
