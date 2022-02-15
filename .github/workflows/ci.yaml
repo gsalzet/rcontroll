@@ -31,11 +31,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Chmod configure and cleanup
-        run: |
-          export TMPDIR=~/tmp && \
-          chmod +x configure && \
-          chmod +x cleanup
       - name: Bootstrap
         run: |
           curl -OLs https://eddelbuettel.github.io/r-ci/run.sh
