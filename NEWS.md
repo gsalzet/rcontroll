@@ -1,6 +1,9 @@
 
+# rcontroll 0.1.0.9044
+*  Final Configure file
+
 # rcontroll 0.1.0.9043
-*  Finalize Configure file
+*  WIP Configure file
 
 # rcontroll 0.1.0.9042
 *  Add CI on GH Actions multi-arch
