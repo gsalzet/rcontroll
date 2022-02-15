@@ -23,7 +23,7 @@ jobs:
       matrix:
         include:
           #- {os: windows-latest}
-          #- {os: macOS-latest}
+          - {os: macOS-latest}
           - {os: ubuntu-latest}
 
     runs-on: ${{ matrix.os }}
@@ -43,16 +43,12 @@ jobs:
           ./run.sh bootstrap
       - name: Dependencies
         run: ./run.sh install_deps
-
-      - name: Install dependencies
-        run: |
-          install.packages(c("remotes", "rcmdcheck","tidyr"))
-          remotes::install_deps(dependencies = TRUE)
-        shell: Rscript {0}
         
       - name: Test
         run: ./run.sh run_tests
 
       - name: Coverage
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: ./run.sh coverage
+        run: |
+          Rscript -e "install.packages(c('tidyr','testthat'), dependencies = c('Depends', 'Imports', 'LinkingTo'))"
+          ./run.sh coverage
