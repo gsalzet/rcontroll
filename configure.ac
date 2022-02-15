@@ -1,6 +1,5 @@
 AC_INIT([rcontroll],[0.1.0])
 
-
 ## Set R_HOME, respecting an environment variable if one is set
 : ${R_HOME=$(R RHOME)}
 if test -z "${R_HOME}"; then
