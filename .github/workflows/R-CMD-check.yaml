@@ -29,11 +29,6 @@ jobs:
           install.packages(c("remotes", "rcmdcheck","tidyr"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-      - name: Chmod configure and cleanup
-        run: |
-          export TMPDIR=~/tmp && \
-          chmod +x configure && \
-          chmod +x cleanup
       - name: Check
         run: |
           options(crayon.enabled = TRUE)
